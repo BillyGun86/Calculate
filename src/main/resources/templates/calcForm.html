@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org">
+<body>
+<title>Calculate</title>
+<form th:method="post" th:action="@{/calculate}" th:object="${FormCalculate}">
+    <tr>
+        <td>Выражение</td>
+        <td><input type="text" th:field="*{expression}" id="expression"/></td>
+        <td th:if="${#fields.hasErrors('expression')}" th:errors="*{expression}">Name Error</td>
+    </tr>
+    <br>
+    <tr>
+        <td>Результат</td>
+        <td><input type="text" th:field="*{result}" id="result"/></td>
+    </tr>
+    <br><br>
+    <tr>
+        <td>
+            <button type="submit">Посчитать</button>
+        </td>
+    </tr>
+</form>
+</body>
+</html>
